@@ -16,9 +16,6 @@ build:
   skip: true  # [py<39]
 
 requirements:
-  build:
-    - patch  # [unix]
-    - m2-patch  # [win]
   host:
     - pip
     - python
