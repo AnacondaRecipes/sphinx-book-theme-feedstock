@@ -16,10 +16,13 @@ build:
   skip: true  # [py<39]
 
 requirements:
+  build:
+    - patch  # [unix]
+    - m2-patch  # [win]
   host:
     - pip
     - python
-    - sphinx-theme-builder >=0.2.0a7
+    - sphinx-theme-builder ==0.2.0b2
     - wheel
   run:
     - pydata-sphinx-theme >=0.15.0
@@ -46,10 +49,15 @@ test:
     - defusedxml
 
 about:
-  home: https://sphinx-book-theme.readthedocs.org
+  home: https://sphinx-book-theme.readthedocs.io
   summary: A clean book theme for scientific explanations and documentation with Sphinx
+  description: |
+    A clean book theme for scientific explanations and documentation with Sphinx.
+    This theme is based on pydata-sphinx-theme and provides a clean, modern look
+    for documentation websites with features like collapsible sidebars,
+    interactive elements, and support for Jupyter notebooks.
   dev_url: https://github.com/executablebooks/sphinx-book-theme
-  doc_url: https://sphinx-book-theme.readthedocs.org
+  doc_url: https://sphinx-book-theme.readthedocs.io
   license: BSD-3-Clause
   license_family: BSD
   license_file: LICENSE
