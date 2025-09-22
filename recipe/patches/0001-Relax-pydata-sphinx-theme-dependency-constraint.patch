@@ -1,0 +1,29 @@
+From 4d311fa7291df45ac95697be141fc0ef8cb09fe1 Mon Sep 17 00:00:00 2001
+From: Steven Crass <scrass@anaconda.com>
+Date: Fri, 19 Sep 2025 10:47:04 -0600
+Subject: [PATCH] Relax pydata-sphinx-theme dependency constraint
+
+Change from exact version requirement (==0.15.4) to minimum version
+requirement (>=0.15.0) to allow compatibility with available conda
+packages. The exact version pin was too restrictive for conda packaging
+where only 0.16.1 is available in Anaconda repositories.
+---
+ pyproject.toml | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/pyproject.toml b/pyproject.toml
+index 290291c..31bf31a 100644
+--- a/pyproject.toml
++++ b/pyproject.toml
+@@ -37,7 +37,7 @@ readme = "README.md"
+ requires-python = ">=3.9"
+ dependencies = [
+   "sphinx>=6.1",
+-  "pydata-sphinx-theme==0.15.4"
++  "pydata-sphinx-theme>=0.15.0"
+ ]
+
+ license = { file = "LICENSE" }
+--
+2.50.1 (Apple Git-155)
+
