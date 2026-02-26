@@ -1,0 +1,5 @@
+build_env_vars:
+  ANACONDA_ROCKET_ENABLE_PY314 : yes
+
+channels:
+  - https://staging.continuum.io/pbp/fs/pydata-sphinx-theme-feedstock/pr4/e0db908

@@ -11,7 +11,7 @@ source:
     - patches/0001-Relax-pydata-sphinx-theme-dependency-constraint.patch
 
 build:
-  number: 0
+  number: 1
   script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
   skip: true  # [py<39]
 
@@ -19,11 +19,12 @@ requirements:
   host:
     - pip
     - python
-    - sphinx-theme-builder ==0.2.0b2
+    - sphinx-theme-builder >=0.2.0a7
     - wheel
   run:
-    - pydata-sphinx-theme >=0.15.0
     - python
+    # Use a version range that is compatible with the conda package
+    - pydata-sphinx-theme >=0.15.0,<0.17.0
     - sphinx >=6.1
 
 test:
