@@ -1,19 +1,20 @@
-{% set version = "1.1.4" %}
+{% set name = "sphinx-book-theme" %}
+{% set version = "1.4.0" %}
 
 package:
-  name: sphinx-book-theme
+  name: {{ name }}
   version: {{ version }}
 
 source:
   url: https://github.com/executablebooks/sphinx-book-theme/archive/refs/tags/v{{ version }}.tar.gz
-  sha256: e845ce8e58c99ab858fae82b4bbbc62bde226dd861c90ba1f91a26e1113a5775
+  sha256: 18a0ffc5d043091c5111f0fe8db16d01c951bf46f7ea1e88db45edc70ceb5ec8
   patches:
     - patches/0001-Relax-pydata-sphinx-theme-dependency-constraint.patch
 
 build:
-  number: 1
+  number: 0
   script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
-  skip: true  # [py<39]
+  skip: true  # [py<311]
 
 requirements:
   host:
@@ -24,8 +25,8 @@ requirements:
   run:
     - python
     # Use a version range that is compatible with the conda package
-    - pydata-sphinx-theme >=0.15.0,<0.17.0
-    - sphinx >=6.1
+    - pydata-sphinx-theme >=0.20.0
+    - sphinx >=8.2
 
 test:
   source_files:
